@@ -59,12 +59,12 @@ os.environ["webdriver.chrome.driver"] = executable_path
 #Signing in process
 driver.get("https://moz.com/login")
 try:
-    felem(driver, "input[name=email]").send_keys("breakoutextension@gmail.com")
+    felem(driver, "input[name=email]").send_keys("luvu869@gmail.com")
     try:
         felem(driver, "#remember_me").click()
     except:
         pass
-    felem(driver, "input[name=password]").send_keys("0987654321@BO\n")
+    felem(driver, "input[name=password]").send_keys("9449939429\n")
     time.sleep(2)
 except:
     pass
@@ -152,7 +152,7 @@ for keywords in range(0, len(KeywordsToSearch)):
         time.sleep(2)
         
         NextMozButton = driver.find_elements_by_xpath("/html/body/main/div/div/div[1]/div/div[2]/div[5]/div[2]/div[4]/div[2]/div[2]/div[2]/button")
-        print(NextMozButton)
+
         for i in NextMozButton:
             NextMoz = i.text
         if(NextMoz[-1] == 'k'):
