@@ -9,6 +9,10 @@ import pandas as pd
 import os
 import ctypes
 
+#Log in credentials
+username = "" #Enter the username here
+password = "" #Enter the password
+
 def quickedit(enabled=1): # This is a patch to the system that sometimes hangs
     kernel32 = ctypes.windll.kernel32
     if enabled:
@@ -59,12 +63,12 @@ os.environ["webdriver.chrome.driver"] = executable_path
 #Signing in process
 driver.get("https://moz.com/login")
 try:
-    felem(driver, "input[name=email]").send_keys("luvu869@gmail.com")
+    felem(driver, "input[name=email]").send_keys(username)
     try:
         felem(driver, "#remember_me").click()
     except:
         pass
-    felem(driver, "input[name=password]").send_keys("9449939429\n")
+    felem(driver, "input[name=password]").send_keys(password + "\n")
     time.sleep(2)
 except:
     pass
